@@ -27,14 +27,12 @@ else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wextra -pedantic")
 endif()
 
-include_directories("include")
-
 #-------------------------------------------------------------------------------
 # Line Count
 #-------------------------------------------------------------------------------
 
 add_custom_target(count
-    find include lib tools \\\( -name "*.hpp" -or -name "*.cpp" \\\)
+    find src \\\( -name "*.hpp" -or -name "*.cpp" \\\)
             -print0 | xargs -0 wc -l
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
