@@ -21,7 +21,7 @@
 
 #include "etsl_file.hpp"
 #include "etsl_tokenizer.hpp"
-#include "util.hpp"
+#include "algorithm.hpp"
 
 namespace etsl {
     namespace detail {
@@ -183,10 +183,6 @@ namespace etsl {
                     }
                 }
 
-                auto unique_sort = [](std::vector<std::string>& vec) {
-                    std::sort(begin(vec), end(vec));
-                    vec.erase(std::unique(begin(vec), end(vec)), end(vec));
-                };
                 for (etsl_category& cat : file_.categories) {
                     for (etsl_choice& ch : cat.choices) {
                         unique_sort(ch.if_props);

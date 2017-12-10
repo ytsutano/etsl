@@ -14,10 +14,17 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-#ifndef ETSL_UTIL_HPP
-#define ETSL_UTIL_HPP
+#ifndef ETSL_ALGORITHM_HPP
+#define ETSL_ALGORITHM_HPP
 
 namespace etsl {
+    template <typename T>
+    void unique_sort(std::vector<T>& vec)
+    {
+        std::sort(begin(vec), end(vec));
+        vec.erase(std::unique(begin(vec), end(vec)), end(vec));
+    }
+
     void trim_inplace(std::string& s)
     {
         auto from = begin(s);

@@ -18,7 +18,7 @@
 #define ETSL_TOKENIZER_HPP
 
 #include "etsl_file.hpp"
-#include "util.hpp"
+#include "algorithm.hpp"
 
 namespace etsl {
     struct etsl_syntax_error : std::runtime_error {
